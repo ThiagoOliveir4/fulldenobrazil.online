@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade DenoBR</title>
+</head>
+<body>
+    <nav>
+        <a href="#" class="title-community">Deno BR</a>
+    
+    <div class="nav-content-right">
+        <button type="button" class="collapse-button">
+            ☰ 
+        </button>
+    <div class="collapse-menu">
+     <ul class="menu-list">
+         <li> Documentação</li>
+         <li> Github do Deno</li>
+         <li> Github do Site</li>
+         <li> TeleGroups</li>
+         
+     </ul>
+    </div>
+
+    </div>
+   </nav>
+
+<style>
+
+:root{
+    --main-bg-color-scheme: #18d16b;
+    --font-size-medium: 16px;
+    --font-size-small: 12px;
+    --font-base:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+    *{margin: 0px;padding: 0px;}
+    .title-community{ 
+        font-size: 22px;
+        padding: 8px 12px;
+        font-family: var(--font-base);
+        text-decoration: none;
+        color: #ffff;
+        float: left;
+    }
+    nav { 
+        background: var(--main-bg-color-scheme);
+        height: 50px; 
+       
+    }
+    .nav-content-right{
+    float: right;
+    display:  flex !important;
+}
+
+.collapse-button
+{
+  
+    width: 12%;
+    border-radius: 7px;
+    border: solid 1px #219455;
+    font-size: 12px;
+    background: none;
+    visibility: hidden;
+}
+
+.nav-content-right .menu-list{
+    margin-top: 2%;
+    width: max-content;
+}
+.menu-list li {
+    display: inline;
+    text-decoration: none;
+    font-family: var(--font-base);
+    font-size: var(--font-size-medium);
+    color: red;
+    padding: 12px;
+    color: #ffff;
+}
+
+ /* Responsive Queries CSS */
+@media (max-width: 767.98px){
+
+    .collapse-button{
+    width: 4%;
+    font-size: 36px;
+    visibility: visible;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  
+    }
+
+    .collapse-menu {
+    background: var(--main-bg-color-scheme);
+    margin-top: 11%;
+    left: 100%;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    transition: -wenkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out, -wenkit-transform .2s ease-in-out ;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    }
+    .open-collapse-menu {
+    -webkit-transform: translateX(0%); 
+    transform: translateX(0%); 
+ 
+    }
+    .collapse-menu .collapse-menu .menu-list{
+    margin-top: 2%;
+}
+.menu-list li {
+    display: list-item;
+    list-style: none;
+    text-decoration: none;
+    font-family: var(--font-base);
+    font-size: var(--font-size-medium);
+    padding: 12px;
+    color: #000;
+}
+}
+ 
+</style>
+
+<script>
+    const CollapseButton = document.querySelector('.collapse-button')
+    const CollapseMenu = document.querySelector('.collapse-menu')
+    
+    CollapseButton.onclick = ( ) =>{
+        //CollapseMenuCss Enable and Disable
+        let MenuLeft= CollapseMenu.classList.contains("open-collapse-menu");
+        if(MenuLeft==true)
+        {
+             CollapseMenu.classList.remove("open-collapse-menu")
+        }else{
+            CollapseMenu.classList.add("open-collapse-menu")
+            CollapseMenu.style.left="0%"
+        }
+       
+        
+    
+         
+    }
+    </script>
+</body>
+
+</html>
